@@ -1,0 +1,35 @@
+.FooterContainer{
+    position: fixed;
+    bottom: 0;
+    background-color: var(--footer-color);
+    height: 7rem;
+    width: 100%;
+}
+.FooterComp{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.FooterComp hr{
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+}
+.BannerContainer{
+    padding: 1rem;
+    height: 100%;
+    width: 50%;
+}
+.BannerImg{
+    height: 3.5rem;
+    width: 7.5rem;
+}
+.BannerContainer p{
+    width: 90%;
+    font-size: 0.8rem;
+    color: white;
+}
+.SocialsContainer{
+    
+    height: 100%;
+    width: 50%;
+}
