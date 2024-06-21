@@ -1,0 +1,14 @@
+.aboutUs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.4rem;
+    height: 1.2rem;
+    font-size: small;
+    border: 0.14rem solid #C0CB02;
+    margin-left: 0.65rem;
+    padding: 0.3rem;
+    padding-bottom: 0.6rem;
+    padding-top: 0.6rem;
+    color: #143905;
+}

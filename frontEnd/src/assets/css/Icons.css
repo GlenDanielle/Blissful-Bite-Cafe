@@ -1,0 +1,8 @@
+.socMedIconFooter{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.socMedIconFooter img{
+    height: 2rem;
+}

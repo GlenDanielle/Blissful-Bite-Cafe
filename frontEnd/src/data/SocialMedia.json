@@ -1,0 +1,12 @@
+[
+    {   
+        "group": "socMedIconFooter",
+        "name": "Facebook",
+        "icon": "https://www.svgrepo.com/show/349359/facebook.svg"
+    },
+    {
+        "group": "socMedIconFooter",
+        "name": "Instagram",
+        "icon": "https://www.svgrepo.com/show/303145/instagram-2-1-logo.svg"
+    }
+]
