@@ -1,21 +1,22 @@
 import '../assets/css/Footer.css'
 
-import banner from '/assets/banner.png'
 import SocialMediaData from '../data/SocialMedia.json'
 
+import Images from '../comp/Images.jsx'
 import Icons from '../comp/Icons.jsx'
 import Button from '../comp/Button.jsx'
 
 const Footer = () => {
     const footerClass = 'aboutUs'
     const footerTxt = 'About us'
+
   return (
     <div className='FooterContainer'>
         <div className='FooterComp'>
 
             <div className='BannerContainer'>
                 <div className='BannerImgContainer'>
-                    <img className='BannerImg' src={banner} alt='banner'></img>
+                    <img className='BannerImg' src={Images[0].src} alt='banner'></img>
                 </div>
                 
                 <p>

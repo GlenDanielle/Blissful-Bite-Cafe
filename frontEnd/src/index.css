@@ -1,4 +1,8 @@
 :root {
+    --primary-color: #143905;
+    --secondary-color: #C0CB02;
+    --tertiary-color: #FDCB30;
+
     --text-color: white; /* White */
     --background-color: black; /* Dark gray */
     --footer-color: #143905;

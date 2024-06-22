@@ -5,4 +5,5 @@
 }
 .socMedIconFooter img{
     height: 2rem;
+    cursor: pointer;
 }
