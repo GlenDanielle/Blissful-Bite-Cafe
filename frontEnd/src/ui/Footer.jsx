@@ -7,8 +7,7 @@ import Icons from '../comp/Icons.jsx'
 import Button from '../comp/Button.jsx'
 
 const Footer = () => {
-    const footerClass = 'aboutUs'
-    const footerTxt = 'About us'
+    const ButtonFooterData = ['About us', 'FooterButton']
 
   return (
     <div className='FooterContainer'>
@@ -30,7 +29,7 @@ const Footer = () => {
             <div className='SocialsContainer'>
                 <div>
                     <div className='AboutUsButtonContainer'>
-                        <Button Data={footerClass} Txt={footerTxt}/>
+                        <Button Txt={ButtonFooterData[0]} Data={ButtonFooterData[1]}/>
                     </div>
                     <div className='SocialMediaIconContainer'>
                         <p>Contact us:</p>

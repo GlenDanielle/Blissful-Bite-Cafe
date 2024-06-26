@@ -1,9 +1,19 @@
-.socMedIconFooter{
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
+.Croissant img{
+    position: absolute;
+    left: 4rem;
+    top: -2rem;
+    height: 5rem;
 }
-.socMedIconFooter img{
-    height: 2rem;
-    cursor: pointer;
+.Honey img{
+    position: absolute;
+    right: 0rem;
+    top: -0.6rem;
+    height: 5rem;
+}
+.Leaf img{
+    position: absolute;
+    bottom: 1rem;
+    left: 4.4rem;
+    height: 3.5rem;
+    z-index: 1rem;
 }

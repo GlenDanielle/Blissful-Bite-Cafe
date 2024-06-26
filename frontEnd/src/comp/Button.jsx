@@ -1,9 +1,9 @@
-import '../assets/css/Button.css'
 
-const Button = ({Data, Txt}) => {
+
+const Button = ({Txt, Data}) => {
   return (
-    <div>
-      <button className={Data}>
+    <div className={Data}>
+      <button>
         {Txt}
       </button>
     </div>

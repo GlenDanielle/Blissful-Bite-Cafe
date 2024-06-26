@@ -1,9 +1,8 @@
 .FooterContainer{
-    position: fixed;
-    bottom: 0;
     background-color: var(--footer-color);
     height: 7rem;
     width: 100%;
+    z-index: -1;
 }
 .FooterComp{
     display: flex;
@@ -45,6 +44,29 @@
 }
 .AboutUsButtonContainer{
     margin-bottom: 0.2rem;
+}
+.AboutUsButtonContainer button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.4rem;
+    height: 1.5rem;
+    width: 3rem;
+    font-size: 0.5rem;
+    border: 0.14rem solid #C0CB02;
+    margin-left: 1.01rem;
+    padding: 0.3rem;
+    color: #143905;
+    cursor: pointer;
+}
+.SocialMediaIconContainer div{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.SocialMediaIconContainer img{
+    height: 2rem;
+    cursor: pointer;
 }
 .SocialMediaIconContainer p{
     font-size: 0.6rem;
