@@ -1,0 +1,21 @@
+//C# rundown crashcourse
+//data types
+//record can't be mutated. good for handling sensitive datas
+//struct are for storing primitive types, this exist in the execution of the program and not stored in memory.
+
+//class types
+//public class is basically can be used everywhere
+//private class is only available in that specific class it was initialized on
+//protected is declaring scope of everthing that is inherit from it
+//internal just the assembly
+//file means just this file
+
+//void means no value to return
+//static runs once but you need to use static on all your functions
+
+//int arr[] = new int[] 
+//just use list for dynamic size
+//List<int> list = new list<int>()
+//list.add(5) or list.remove(1)
+
+//foreach(int index in list){}
