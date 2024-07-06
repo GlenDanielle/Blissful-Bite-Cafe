@@ -19,3 +19,26 @@
 //list.add(5) or list.remove(1)
 
 //foreach(int index in list){}
+
+/*
+{
+    id
+    customer_Id
+    date_Order
+    TotalPrice
+    order {
+        {
+            orderName
+            type
+            orderQuantity
+            orderRequest
+        }
+        {
+            orderName
+            type
+            orderQuantity
+            orderRequest
+        }
+    }
+}
+*/

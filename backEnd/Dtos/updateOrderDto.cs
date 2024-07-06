@@ -1,7 +1,10 @@
-﻿namespace BackEnd.Api.Dto;
+﻿using System.ComponentModel.DataAnnotations;
 
-public record class updateOrderDto(
-    string CustomerName,
-    string OrderName,
-    DateOnly OrderDate
+namespace BackEnd.Dtos;
+
+public record class UpdateOrderDto(
+    [Required] string CustomerId,
+    [Required] DateOnly OrderDate,
+    [Required] double TotalPrice,
+    [Required] string OrderInfoId
 );

@@ -1,21 +1,26 @@
-using BackEnd.Api;
+using BackEnd.Data;
+using BackEnd.Endpoint;
+//import to
+
 
 var builder = WebApplication.CreateBuilder(args);
+
+var connString = builder.Configuration.GetConnectionString("RestoDb");
+//sa appsettings.json nakalagay tong connection string
+//it acts like a .env 
+builder.Services.AddSqlite<RestoContext>(connString);
+
+//builder.Services.AddScoped<RestoContext>();
+
 var app = builder.Build();
 
-List<gameDto> orderDesc = [
-    new(
-        1,
-        "Jojo",
-        "Nuggets",
-        new DateOnly(27, 06, 24)
-    )
-];
-
 //route
-app.MapGet("/", () => "Der Vogel kämpft sich aus dem Ei");
+app.MapGet("/", () => 
+    "Der Vogel kämpft sich aus dem Ei"
+);
 
-//get customer orders
-app.MapGet("orders", () => orderDesc);
+app.MapOrderEndpoints();
+
+app.MigrateDb();
 
 app.Run();

@@ -1,5 +1,7 @@
-﻿using System.Text.RegularExpressions;
-using BackEnd.Api.Dto;
+﻿using BackEnd.Data;
+using BackEnd.Dtos;
+using BackEnd.Entity;
+using BackEnd.Mapping;
 
 namespace BackEnd.Endpoint;
 
@@ -7,87 +9,96 @@ public static class OrderEndpoints
 {
     const string EndpointOrderName = "GetOrder";
 
-    private static readonly List<orderDto> orders = [
-        //readonly is basically const
+    private static readonly List<OrderSummaryDto> Orders = [
+        //readonly BASICALLY
         new(
             1,
             "Jojo",
-            "Nuggets",
-            new DateOnly(2024, 06, 27)//you must use presentable format like year month day
+            new DateOnly(2024, 6, 27),//you must use presentable format like year month day,
+            100,
+            "Fried Siken"
         ),
         new(
             2,
             "Gojo",
-            "Soju",
-            new DateOnly(2005, 01, 12)
+            new DateOnly(2004, 9, 7),//you must use presentable format like year month day,
+            200,
+            "French Fries"
         ),
         new(
             3,
             "Jogo",
-            "Fries",
-            new DateOnly(2001, 12, 01)
+            new DateOnly(2000, 1, 12),//you must use presentable format like year month day,
+            300,
+            "Chicken Nuggets"
         )
     ];
 
-    public static RouteGroupBuilder MapOrderEndpoints(this WebApplication app){
-                
-        var orderEP = app.MapGroup("orders");
-        //order End Point
+    public static RouteGroupBuilder MapOrderEndpoints(this WebApplication app)
+    {
+
+        var OrderEP = app.MapGroup("Orders")//order End Point
+                         .WithParameterValidation();
 
         //get customer orders
-        orderEP.MapGet("/", () => orders);
+        OrderEP.MapGet("/", () => Orders);
 
         //.Find is basically Find
         //GET!
-        orderEP.MapGet("/{id}", (int id) =>{
-            var order = orders.Find(orders => orders.Id == id);
+        OrderEP.MapGet("/{id}", (int id, RestoContext dbContext) =>
+        {
+            Order? order = dbContext.Orders.Find(id);
 
             return order is null ? Results.NotFound() : Results.Ok(order);
         })
         .WithName(EndpointOrderName);
 
         //POST
-        orderEP.MapPost("/", (createOrderDto newOrder) => {
-            orderDto order = new(
-                orders.Count +1,
-                newOrder.CustomerName,
-                newOrder.OrderName,
-                newOrder.OrderDate
-            );
-            orders.Add(order);
-            
-            return Results.CreatedAtRoute(EndpointOrderName, new {id = order.Id}, order);
+        OrderEP.MapPost("/", (CreateOrderDto newOrder, RestoContext DbContext) =>
+        {
+            Order order = newOrder.ToEntity();
+            order.OrderInfo = DbContext.OrderInfos.Find(newOrder.OrderInfoId);
+
+            DbContext.Add(order);
+            DbContext.SaveChanges();
+
+
+            return Results.CreatedAtRoute(EndpointOrderName, new { id = order.Id }, order.ToOrderDetailsDto());
             //we use Results.CreatedAtRoute to provide location header so that the FE knows the loc
         });
 
         //PUT
-        orderEP.MapPut("/{id}", (int id, updateOrderDto updatedOrder)=>{
-            var index = orders.FindIndex(order => order.Id == id);
+        OrderEP.MapPut("/{id}", (int id, UpdateOrderDto updatedOrder) =>
+        {
+            var index = Orders.FindIndex(order => order.Id == id);
             //FindIndex is basically find in the index
 
-            if(index == -1){
+            if (index == -1)
+            {
                 return Results.NotFound();
             }
 
-            orders[index] = new orderDto(
+            Orders[index] = new OrderSummaryDto(
                 id,
-                updatedOrder.CustomerName,
-                updatedOrder.OrderName,
-                updatedOrder.OrderDate
+                updatedOrder.CustomerId,
+                updatedOrder.OrderDate,
+                updatedOrder.TotalPrice,
+                updatedOrder.OrderInfoId
             );
 
             return Results.NoContent();
         });
 
         //DELETE
-        orderEP.MapDelete("/{id}", (int id) => {
+        OrderEP.MapDelete("/{id}", (int id) =>
+        {
 
-            orders.RemoveAll(order => order.Id == id);
+            Orders.RemoveAll(order => order.Id == id);
 
             return Results.NoContent();
         });
 
-        return orderEP;
+        return OrderEP;
 
     }
 

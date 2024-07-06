@@ -6,7 +6,7 @@ public class Order
     public required string CustomerId { get; set; }
     public DateOnly DateOrder { get; set; }
     public double TotalPrice { get; set; }
-    public int OrderId { get; set; }
+    public int OrderInfoId { get; set; }
     public OrderInfo? OrderInfo { get; set; }
 
 }

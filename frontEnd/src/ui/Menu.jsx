@@ -33,7 +33,7 @@ const Menu = () => {
                     <div className='ProductContainer'>
                         <div className='ImageTitleHolder'>
                             <img src='https://picsum.photos/200/100'></img>
-                            <p>Hello World</p>
+                            <p>Don Quixote</p>
                         </div>
                         
                         <form className='OptionHolder'>
