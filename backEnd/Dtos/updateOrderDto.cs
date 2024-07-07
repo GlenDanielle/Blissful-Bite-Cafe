@@ -4,7 +4,7 @@ namespace BackEnd.Dtos;
 
 public record class UpdateOrderDto(
     [Required] string CustomerId,
-    [Required] DateOnly OrderDate,
+    [Required] DateOnly DateOrder,
     [Required] double TotalPrice,
-    [Required] string OrderInfoId
+    [Required] int OrderInfoId
 );

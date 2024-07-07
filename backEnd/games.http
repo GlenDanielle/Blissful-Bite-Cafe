@@ -12,22 +12,22 @@ Content-Type: application/json
 {
     "CustomerId": "Jotaro",
     "DateOrder": "2011-11-18",
-    "TotalPrice": 600.99,
-    "OrderInfoId": 2
+    "TotalPrice": 69.99,
+    "OrderInfoId": 3
 }
 
 ###
-PUT http://localhost:5075/orders/2
+PUT http://localhost:5075/orders/3
 Content-Type: application/json
 
 //payload to update
 //becareful sa Names ng variables kasi d mababasa ng controllers
 {
-    "CustomerId": "Jana",
-    "OrderDate": "2001-10-1",
-    "TotalPrice": 800,
-    "OrderInfo": ["Kikiam"]
+    "CustomerId": "Junjun",
+    "DateOrder": "2001-10-01",
+    "TotalPrice": 800.91,
+    "OrderInfoId": 2
 }
 
 ###
-DELETE http://localhost:5075/orders/8
+DELETE http://localhost:5075/orders/3

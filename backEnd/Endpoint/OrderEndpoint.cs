@@ -2,37 +2,13 @@
 using BackEnd.Dtos;
 using BackEnd.Entity;
 using BackEnd.Mapping;
+using Microsoft.EntityFrameworkCore;
 
 namespace BackEnd.Endpoint;
 
 public static class OrderEndpoints
 {
     const string EndpointOrderName = "GetOrder";
-
-    private static readonly List<OrderSummaryDto> Orders = [
-        //readonly BASICALLY
-        new(
-            1,
-            "Jojo",
-            new DateOnly(2024, 6, 27),//you must use presentable format like year month day,
-            100,
-            "Fried Siken"
-        ),
-        new(
-            2,
-            "Gojo",
-            new DateOnly(2004, 9, 7),//you must use presentable format like year month day,
-            200,
-            "French Fries"
-        ),
-        new(
-            3,
-            "Jogo",
-            new DateOnly(2000, 1, 12),//you must use presentable format like year month day,
-            300,
-            "Chicken Nuggets"
-        )
-    ];
 
     public static RouteGroupBuilder MapOrderEndpoints(this WebApplication app)
     {
@@ -41,26 +17,33 @@ public static class OrderEndpoints
                          .WithParameterValidation();
 
         //get customer orders
-        OrderEP.MapGet("/", () => Orders);
+        OrderEP.MapGet("/", (RestoContext dbContext) => {
+            return dbContext.Orders
+                            .Include(order => order.OrderInfo)//para bawat order mainclude yung bawat info nung order meaning name
+                            .Select(order => order.ToOrderSummaryDto())
+                            .AsNoTracking() //to optimize dont track basically gamitin lang to if giving data
+                            .ToListAsync(); //basically one liner async await
+        });
 
         //.Find is basically Find
         //GET!
-        OrderEP.MapGet("/{id}", (int id, RestoContext dbContext) =>
+        OrderEP.MapGet("/{id}", async (int id, RestoContext dbContext) =>
         {
-            Order? order = dbContext.Orders.Find(id);
+            Order? order = await dbContext.Orders.FindAsync(id);
 
-            return order is null ? Results.NotFound() : Results.Ok(order);
+            return order is null ? Results.NotFound() 
+            : Results.Ok(order.ToOrderDetailsDto());
         })
         .WithName(EndpointOrderName);
 
         //POST
-        OrderEP.MapPost("/", (CreateOrderDto newOrder, RestoContext DbContext) =>
+        OrderEP.MapPost("/", async(CreateOrderDto newOrder, RestoContext DbContext) =>
         {
             Order order = newOrder.ToEntity();
-            order.OrderInfo = DbContext.OrderInfos.Find(newOrder.OrderInfoId);
+            order.OrderInfo = await DbContext.OrderInfos.FindAsync(newOrder.OrderInfoId);
 
             DbContext.Add(order);
-            DbContext.SaveChanges();
+            await DbContext.SaveChangesAsync();
 
 
             return Results.CreatedAtRoute(EndpointOrderName, new { id = order.Id }, order.ToOrderDetailsDto());
@@ -68,32 +51,29 @@ public static class OrderEndpoints
         });
 
         //PUT
-        OrderEP.MapPut("/{id}", (int id, UpdateOrderDto updatedOrder) =>
+        OrderEP.MapPut("/{id}", async(int id, UpdateOrderDto updatedOrder, RestoContext dbContext) =>
         {
-            var index = Orders.FindIndex(order => order.Id == id);
+            var existingOrder = await dbContext.Orders.FindAsync(id);
             //FindIndex is basically find in the index
 
-            if (index == -1)
+            if (existingOrder is null)
             {
                 return Results.NotFound();
             }
-
-            Orders[index] = new OrderSummaryDto(
-                id,
-                updatedOrder.CustomerId,
-                updatedOrder.OrderDate,
-                updatedOrder.TotalPrice,
-                updatedOrder.OrderInfoId
-            );
+            //entry can find something in the db
+            dbContext.Entry(existingOrder)
+                     .CurrentValues.SetValues(updatedOrder.ToUpdateOrderEntity(id)); 
+                     await dbContext.SaveChangesAsync();
 
             return Results.NoContent();
         });
 
         //DELETE
-        OrderEP.MapDelete("/{id}", (int id) =>
+        OrderEP.MapDelete("/{id}", async(int id, RestoContext dbContext) =>
         {
 
-            Orders.RemoveAll(order => order.Id == id);
+            await dbContext.Orders.Where(order => order.Id == id)
+                                  .ExecuteDeleteAsync();
 
             return Results.NoContent();
         });

@@ -21,6 +21,6 @@ app.MapGet("/", () =>
 
 app.MapOrderEndpoints();
 
-app.MigrateDb();
+await app.MigrateDbAsync();
 
 app.Run();
