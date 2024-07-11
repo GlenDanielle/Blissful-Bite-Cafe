@@ -1,11 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap');
+
 :root {
     --primary-color: #143905;
     --secondary-color: #C0CB02;
     --tertiary-color: #FDCB30;
+    --container-color: #FBEAA3;
 
     --text-color: white; /* White */
-    --background-color: black; /* Dark gray */
+    --background-color: #F9FAE0;
     --footer-color: #143905;
+
+    --primary-font: "Philosopher", sans-serif;
+    --secondary-font: "Tenali Ramakrishna", sans-serif;
+
 }
 
 /*
@@ -19,6 +27,7 @@
   */
   * {
     margin: 0;
+    padding:  0;
   }
   /*
     Typographic tweaks!

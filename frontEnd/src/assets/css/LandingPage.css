@@ -1,0 +1,218 @@
+.LandingPageBg{
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    padding-bottom: 1rem;
+    position: relative;
+}
+.TopBorder{
+    min-width: 1440px;
+    height: 1.5rem;
+    background-color: var(--primary-color);
+}
+.TopClip{
+    width: 12rem;
+    height: 3rem;
+    background-color: var(--primary-color);
+    margin-bottom: -2.7rem;
+    border-bottom: 0.4rem solid var(--tertiary-color);
+    border-radius: 0rem 0rem 2rem 2rem;
+}
+.BBCLogo{
+    width: 6.5rem;
+    height: 6.5rem;
+    border: 0.2rem solid var(--secondary-color);
+    border-radius: 50rem;
+}
+p.BBCPhrase{
+    text-align: center;
+    margin: 1rem 0rem 1rem 0rem;
+    background-color: rgb(192,203,2, 0.2);
+    font-family: var(--primary-font);
+    padding: 1rem 1rem 3.5rem 1rem;
+    line-height: 1.2rem;
+    box-shadow: 0rem 0.3rem 0.5rem var(--secondary-color);
+}
+.MiddleClip{
+    width: 10.5rem;
+    height: 3rem;
+    margin-top: -2.5rem;
+    border-top: 0.4rem solid var(--tertiary-color);
+    border-radius: 1.5rem 1.5rem 0rem 0rem;
+    background-color: var(--container-color);
+}
+.PancakeSample{
+    width: 10rem;
+    height: 10rem;
+    margin-top: -6.5rem;
+}
+.ContentsContainer{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-top: -3.5rem;
+    min-width: 320px;
+    height: 20rem;
+    border-radius: 2rem;
+    border-bottom: 0.4rem solid var(--tertiary-color);
+    background-color: var(--container-color);
+    object-fit: contain;
+    font-family: var(--secondary-font);
+}
+.SubTitles{
+    z-index: 1;
+    line-height: 0.7rem;
+    font-size: 1rem;
+}
+.Sub{
+    position: absolute;
+    display: flex;
+    align-self: center;
+    text-align: center;
+    width: 6.5rem;
+    padding: 0.7rem;
+    background-color: var(--background-color);
+}
+.name1{
+    top: 2rem;
+    left: 0;
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+.name2{
+    top: 2rem;
+    right: 0;
+    border-radius: 1rem 0rem 0rem 1rem;
+}
+.name3{
+    bottom: 2rem;
+    left: 0;
+    border-radius: 0rem 1rem 1rem 0rem;
+}
+.name4{
+    bottom: 2rem;
+    right: 0;
+    border-radius: 1rem 0rem 0rem 1rem;
+}
+.InstructContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    min-width: 320px;
+    line-height: 0.5rem;
+    align-items: center;
+}
+.Burger{
+    width: 7.5rem;
+    margin: 0.3rem;
+    opacity: 0.2;
+}
+.OrderNow {
+    position: absolute;
+    background-color: var(--secondary-color); 
+    z-index: 3;
+}
+.OrderNow button{
+    background-color: transparent;
+    padding: 0.5rem;
+    z-index: 3;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-family: var(--primary-font);
+    border-radius: 0.5rem;
+    border-color: var(--primary-color);
+}
+
+.Tright{
+    border-radius: 0rem 3.5rem 0rem 0rem;
+}
+.Tleft{
+    border-radius: 3.5rem 0rem 0rem 0rem;
+}
+.Bleft{
+    border-radius: 0rem 0rem 0rem 3.5rem;
+}
+.Bright{
+    border-radius: 0rem 0rem 3.5rem 0rem;
+}
+
+
+.Section{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    line-height: 0.7rem;
+}
+.Section1{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    line-height: 0.7rem;
+}
+.Section2{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    line-height: 0.7rem;
+}
+.Section3{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    line-height: 0.7rem;
+}
+.Context, .Context1{
+    position: absolute;
+    text-align: center;
+    padding: 3rem 0.7rem 0rem 0.7rem;
+    font-size: 0.9rem;
+}
+.Context2, .Context3{
+    position: absolute;
+    text-align: center;
+    padding: 0rem 0.7rem 3rem 0.7rem;
+    font-size: 0.9rem;
+}
+.Berries, .Cookies, .Egg, .Berry1, .Berry2, .Berry3{
+    position: absolute;
+    z-index: 3;
+}
+.Berries{
+    bottom: -1.5rem;
+    width: 6rem;
+    right: -1.5rem;
+}
+.Cookies{
+    bottom: 8.5rem;
+    width: 6rem;
+    left: -2rem;
+}
+.Egg{
+    top: 6rem;
+    width: 5rem;
+    right: -0.5rem;
+}
+.Berry1{
+    width: 1.5rem;
+    top: 8.8rem;
+    left: 1rem;
+}
+.Berry2{
+    top: 10.5rem;
+    left: 0.4rem;
+    width: 1rem;
+}
+.Berry3{
+    top: 14rem;
+    width: 1.1rem;
+    left: 1.5rem;
+}
+

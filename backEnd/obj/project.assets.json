@@ -2627,7 +2627,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Win10\\.nuget\\packages\\": {}
+    "C:\\Users\\viole\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -2635,11 +2635,11 @@
       "projectUniqueName": "C:\\xampp\\htdocs\\dashboard\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
       "projectName": "BackEnd",
       "projectPath": "C:\\xampp\\htdocs\\dashboard\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
-      "packagesPath": "C:\\Users\\Win10\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\viole\\.nuget\\packages\\",
       "outputPath": "C:\\xampp\\htdocs\\dashboard\\Blissful-Bite-Cafe\\BackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Win10\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\viole\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
