@@ -16,6 +16,19 @@ public static class OrderMapping
         };
     }
 
+    //put update
+    public static Order ToUpdateOrderEntity(this UpdateOrderDto updatedOrder, int id){
+        return new Order(){
+            Id = id,
+            CustomerId = updatedOrder.CustomerId,
+            DateOrder = updatedOrder.DateOrder,
+            TotalPrice = updatedOrder.TotalPrice,
+            OrderInfoId = updatedOrder.OrderInfoId,
+            //you cannot access dbcontext here
+           // OrderInfo = DbContext.OrderInfos.Find(newOrder.OrderInfoId)
+        };
+    }
+
     public static OrderSummaryDto ToOrderSummaryDto(this Order order){
          return new OrderSummaryDto(
             order.Id,

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Runtime.InteropServices;
 
 namespace BackEnd.Dtos;
 //record is good cause its like constant you cant mutate or change it

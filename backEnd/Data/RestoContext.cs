@@ -8,6 +8,7 @@ public class RestoContext(DbContextOptions<RestoContext> options)
 {
     public DbSet<Order> Orders => Set<Order>();
     public DbSet<OrderInfo> OrderInfos => Set<OrderInfo>();
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {   
         //kada migration gagawa to ng data
