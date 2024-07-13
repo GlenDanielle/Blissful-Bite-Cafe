@@ -72,7 +72,7 @@ public static class OrderEndpoints
         OrderEP.MapDelete("/{id}", async(int id, RestoContext dbContext) =>
         {
 
-            await dbContext.Orders.Where(order => order.Id == id)
+            await dbContext.Orders.Where(order => order.Id == id) //where is basically find
                                   .ExecuteDeleteAsync();
 
             return Results.NoContent();

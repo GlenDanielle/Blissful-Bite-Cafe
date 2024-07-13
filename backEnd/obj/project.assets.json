@@ -2632,11 +2632,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\xampp\\htdocs\\dashboard\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
+      "projectUniqueName": "C:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
       "projectName": "BackEnd",
-      "projectPath": "C:\\xampp\\htdocs\\dashboard\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
+      "projectPath": "C:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
       "packagesPath": "C:\\Users\\Win10\\.nuget\\packages\\",
-      "outputPath": "C:\\xampp\\htdocs\\dashboard\\Blissful-Bite-Cafe\\BackEnd\\obj\\",
+      "outputPath": "C:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Win10\\AppData\\Roaming\\NuGet\\NuGet.Config"
