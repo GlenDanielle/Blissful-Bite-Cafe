@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj": {}
+    "c:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj": {
+    "c:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
+        "projectUniqueName": "c:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
         "projectName": "BackEnd",
-        "projectPath": "C:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
+        "projectPath": "c:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
         "packagesPath": "C:\\Users\\Win10\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\obj\\",
+        "outputPath": "c:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Win10\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +43,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "DotNetEnv": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
