@@ -1,8 +1,8 @@
 import Banner from '../assets/banner.png'
 import Burger from '../assets/burger.svg'
-import Honey from '../assets/honey.png'
 import Croissant from '../assets/croissant.png'
 import Leaf from '../assets/leaf.png'
+import MenuIcon from '../assets/MenuIcon.png'
 
 const Images = [
     {
@@ -14,8 +14,8 @@ const Images = [
         "src": Burger
     },
     {
-        "name": "Honey",
-        "src": Honey
+        "name": "MenuIcon",
+        "src": MenuIcon
     },
     {
         "name": "Croissant",
