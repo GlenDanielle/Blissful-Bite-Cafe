@@ -4,10 +4,12 @@ import axios from 'axios'
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.headers.common['Accept'] = 'application/json';
 
-//const BackEndBaseUrl = //lagay mo dito url ng backEnd
+const BackEndBaseUrl = import.meta.env.VITE_BackEndUrl;
+//lagay mo dito url ng backEnd
+console.log(BackEndBaseUrl)
 
 const AxiosTryGet = axios.create({
-    BackEndBaseUrl: baseUrl
+    baseURL: `${BackEndBaseUrl}/orders`
 })
 
 export {AxiosTryGet}

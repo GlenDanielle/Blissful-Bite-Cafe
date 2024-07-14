@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj": {}
+    "C:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj": {}
   },
   "projects": {
-    "c:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj": {
+    "C:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
+        "projectUniqueName": "C:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
         "projectName": "BackEnd",
-        "projectPath": "c:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
+        "projectPath": "C:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
         "packagesPath": "C:\\Users\\Win10\\.nuget\\packages\\",
-        "outputPath": "c:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\obj\\",
+        "outputPath": "C:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Win10\\AppData\\Roaming\\NuGet\\NuGet.Config"

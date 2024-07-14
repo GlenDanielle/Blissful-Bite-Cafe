@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SH2JRysWm1Q=",
+  "dgSpecHash": "6EAXMlaL6iY=",
   "success": true,
-  "projectFilePath": "c:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
+  "projectFilePath": "C:\\Projects\\Reactjs ASP\\Blissful-Bite-Cafe\\BackEnd\\BackEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Win10\\.nuget\\packages\\dotnetenv\\3.0.0\\dotnetenv.3.0.0.nupkg.sha512",
     "C:\\Users\\Win10\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

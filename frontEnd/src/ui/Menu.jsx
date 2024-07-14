@@ -6,6 +6,8 @@ import Icons from '../comp/Icons.jsx'
 
 const Menu = () => {
     const ButtonAddToCartData = ['Add', 'AddToCartButton']
+    const QuantityIncrement = ['+', 'QuantityIncrement']
+    const QuantityDecrement = ['-', 'QuantityDecrement']
     var Data = []
 
     for (let i = 0; i < Images.length; i++) {
@@ -33,11 +35,11 @@ const Menu = () => {
                     <div className='ProductContainer'>
                         <div className='ImageTitleHolder'>
                             <img src='https://picsum.photos/200/100'></img>
-                            <p>Don Quixote</p>
+                            <p>Ungeziefer</p>
                         </div>
                         
                         <form className='OptionHolder'>
-                            <label for="Size">Serving sizes</label>
+                            <label htmlFor="Size">Serving sizes</label>
                             <select id="Size">
                             <option value="Small">Small (8oz)</option>
                             <option value="Medium">Medium (12oz)</option>
@@ -50,8 +52,26 @@ const Menu = () => {
                             <input type='text' placeholder='Type Anything...'/>
                         </form>
                     </div>
-                    <div className='MenuCheckOutContainer'>
-                        <Button Txt={ButtonAddToCartData[0]} Data={ButtonAddToCartData[1]}/>
+                    <div className='MenuFooterContainer'>
+                        <div>
+                            <label>
+                                Quantity:
+                            </label>
+                            <div className='QuantitySelectorContainer'>
+                                <Button Txt={QuantityDecrement[0]}/>
+                                <hr/>
+                                <p>
+                                    1
+                                </p>
+                                <hr/>
+                                <Button Txt={QuantityIncrement[0]}/>
+                            </div>
+                        </div>
+
+                        <div className={ButtonAddToCartData[1]}>
+                            <Button Txt={ButtonAddToCartData[0]}/>
+                        </div>
+                    
                     </div>
                     <div></div>
                 </div>

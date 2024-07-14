@@ -92,6 +92,44 @@
     border: solid var(--secondary-color);
     white-space: wrap;
 }
-.MenuCheckOutContainer{
-
+.MenuFooterContainer{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.MenuFooterContainer label{
+    margin-top: 0.1rem;
+    display: flex;
+    justify-content: center;
+    font-size: 0.7rem;
+}
+.AddToCartButton button{
+    margin-top: 1.1rem;
+    width: 6rem;
+    padding: 0.12rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 1rem;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+}
+.QuantitySelectorContainer{
+    width: 5rem;
+    justify-content:space-evenly ;
+    border-radius: 1rem;
+    align-items: center;
+    display: flex;
+    background-color: var(--tertiary-color);
+}
+.QuantitySelectorContainer hr{
+    height: 1rem;
+    border-color: var(--primary-color);
+}
+.QuantitySelectorContainer button{
+    background-color: var(--tertiary-color);
+    color: var(--primary-color);
+    border-radius: 1rem;
+    border: none;
 }

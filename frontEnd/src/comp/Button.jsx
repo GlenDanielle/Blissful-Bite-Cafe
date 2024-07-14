@@ -1,8 +1,8 @@
 
 
-const Button = ({Txt, Data}) => {
+const Button = ({Txt}) => {
   return (
-    <div className={Data}>
+    <div>
       <button>
         {Txt}
       </button>
